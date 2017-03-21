@@ -1,0 +1,41 @@
+---
+title: "World Happiness Report"
+output: html_notebook 
+---
+
+A workbook to learn R Notebooks while trying to understand some of the factors that influence the World Happiness statistics. 
+
+# World Happiness Index
+The [World Happiness Report](http://worldhappiness.report/) is based a survey conducted globally to attempt to replace other, entirely economic, indices by something more meaningful to human beings.
+This applies particularly to Gross Domestic Product, which can measure things like environmental destruction as an economic gain.
+
+```{r warning=FALSE}
+# Packages required
+library(dplyr)
+library(ggrepel)
+library(ggplot2)
+library(gtable)
+library(grid)
+library(gridExtra)
+library(png)
+library(jpeg)
+library(gganimate)
+
+# Read the 2017 dataset, saved from Excel as .csv, and take a quick look
+data.df <- read.csv("data/online+data+chapter+2+whr+2017.csv")
+
+```
+## Summary of the data
+The happiness index itself is derived simply by asking people to rate their happiness on a scale of 1 to 10. The dataset provides the mean for each country.
+There are many other variables to measure such things as trust between people, feelings about level of corruption in the country, levels of economic equality (as measured by the gini index) and more. I will explore the relationship between these and other statistics from other public sources such as OECD statistics.
+For a first look, here is a look at the latest data
+
+```{r}
+this_year_core.df <- select(data.df,country, year, Life.Ladder) %>%
+  filter(year == 2016) %>%
+  arrange(desc(Life.Ladder))
+
+ggplot(this_year_core.df[1:10,],aes(x=reorder(country,-Life.Ladder),y=Life.Ladder)) +
+  geom_bar(stat = "identity")
+```
+
