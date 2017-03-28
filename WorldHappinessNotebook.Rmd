@@ -1,0 +1,172 @@
+---
+title: "World Happiness Report Analysis"
+author: "Eric Lawton"
+date: "March 27, 2017"
+output:
+  html_notebook: default
+  'html_notebook: default': default
+  pdf_document: default
+---
+# About this notebook
+This notebook is my working document as I attempt to do a few inter-related things at once:  
+1. Investigate the possibility of understanding how to make the world a better place, first by understanding it and then by suggesting policy changes that are supported by evidence 
+2. Understand the quality of data in public data sets, mostly provided by governments and non-governmental organisations (NGOs)
+3. Learn R and several of its packages. You should be able to read this without knowing R or even looking at it, but if you are interested, you can see the code that generates the figures. 
+  + If you are not interested in the code, just select the option button "Code" at the top right of this page, and then "Hide all code". There are also individual "Code" buttons to hide or view individual chunks of code.
+  
+I start with the [World Happiness Report (WHR)](http://worldhappiness.report/). This is because it seems to me that the usual economic indicators, like Gross Domestic Product (GDP), are not fit for purpose. GDP in particular is perverse. It measures economic activity, so things like environmental destruction appear as an economic gain, or if all the gains wealth and income go to a very few people, that is reported as a gain, and politicians are pleased to take credit for it, even if almost everyone else in the country loses.
+If "Happiness" seems a little flaky to you, think of it as the World Misery Report, as it is just the inverse, or many sites use more neutral terms like "Life satisfaction" or "Human Development Index".    
+The WHR site provides a complete downloadable report, with much analysis. That will not be repeated here. If you are interested in this topic, I recommend you read it as well. Here, I intend to look at additional aspects not covered and to look at how other public data can also shed light on the document.
+The first part of this page will be as readable as I can make it. Later parts will provide more detailed statistical analysis, which will "show my work" behind the first part.
+## Status
+This is a working document. So far, very little has been done, the intent at this point was simply to establish the moving parts. The full project is kept [here, on GitHub](https://github.com/EricLawtonCA/WorldHappiness) 
+
+## Summary of the data
+The happiness index itself is derived simply by asking people to rate their lives as if they were on a ladder of life, with rungs numbered 1 to 10, where “1” is the worst possible life and “10” the best. The public data provides the average (mean) for each country.
+There are many other variables provided in the data to measure such things as trust between people, feelings about level of corruption in the country and levels of economic equality. I will explore the relationship between these and then attempt other statistics from other public sources such as OECD statistics.
+Here is a look at the latest data, which compares the average person's position on the life ladder with the country's Gross Domestic Product (GDP). As you would expect, there is a rough match between GDP, which is itself a rough match to the country's wealth, and how good a life people think they are leading. However, it varies quite a lot. The blue line represents a kind of average - if a country is on the line, it is where you would expect to find it. If it is above, people are happier than in an average country with the same income; if it is below, people are less happy. As you can see, there are relatively poor countries where people are relatively happy, and there are some rich countries like the Nordic countries that are happier than you would expect them to be, while others at varying wealth levels are not so happy. Of course, this is an overly simplistic analysis, hence the rest of this document.
+**Note:** GDP is shown on a *log* scale. That just means that instead of each level of the scale being a fixed number of dollars (or pounds, or...), it represents multiplying the wealth by 4<span style="color:red"> (fix scale later so represents x2 or x10)</span>. This is because if you have only \$50 per month, adding another \$50 makes far more difference than adding \$50 when you have \$1000, so comparing the effect of doubling rather than adding a fixed amount makes more sense.
+```{r, echo=TRUE, message=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+# library(knitr)
+# opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
+# Packages required - some not used in current version but I expect to use them soon.
+library(dplyr)      # For wrangling #OtherPeoplesData
+library(ggrepel)    # For putting labels on plots that "repel" each other so they are all visible and don't hide the points
+library(ggplot2) 
+library(rworldmap)
+library(gtable)     # These three are to put plots in a larger context with images and text, in a tabular grid
+library(grid)
+library(gridExtra)  
+library(png)        # These two are for reading and displaying images 
+library(jpeg)     
+library(gganimate)  # For animated gifs of plots
+library(maps)       # Provides functions that let us plot the maps - don't know if all this is overkill from 
+library(mapdata)    # Contains the hi-resolution points that mark out the countries.
+library(rgeos)
+library(maptools)  
+library(reshape2)  
+source("reformatters.r") # utilities for reading and reformatting public data
+```
+
+
+```{r}
+# Read the 2017 dataset, saved from Excel as .csv
+happiness.df <- read.csv("data/online+data+chapter+2+whr+2017.csv", stringsAsFactors=FALSE)
+GDP.df <- get_formatted_WB_GDP()
+
+# Too many countries to put all their names on the plot, so here is a subset whose names will be plotted
+# For now, this is just an arbitrary list with countries I know personally and outliers on the graph
+# Will pick some other countries out later for specific purposes
+named_countries <- c("Afghanistan","Congo","Sudan","Myanmar","Iraq","Venezuela","Denmark",
+                     "India","Russia","Argentina","Greece","Brazil","China","Italy", "Congo (Kinshasa)", "Tanzania",
+                     "South Africa","Rwanda", "Bhutan","Botswana","Netherlands","Syria","Central African Republic","South Sudan",
+                     "Spain","France", "Barbados","Japan","Germany","Qatar","Luxembourg",
+                     "Norway","Singapore","New Zealand","United States", "United Kingdom","Canada")
+named_country.df <- subset(happiness.df,country %in% named_countries)
+happiness.df <- transform(happiness.df, PrintCountry = ifelse(country %in% named_countries, country, "")) # separate column for named countries only
+ggplot(filter(happiness.df,year == 2016 & !is.na(Log.GDP.per.capita)),aes(y=Life.Ladder,x=Log.GDP.per.capita)) +
+  labs(title="Money partly buys happiness") +
+  scale_x_continuous(name="GDP per person (log scale)",breaks=seq(0,12,1)) + # various labels
+  scale_y_continuous(name="'Best to worst possible life' 1-10",breaks=seq(2,10,1), limits=c(2, 10)) +
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE) + # Add linear regression line
+  # Use "text_repel" to add names of selected countries but if they overlap, offset them a bit until they don't
+  geom_text_repel(aes(label=PrintCountry), min.segment.length = unit(0, "lines"), 
+                  point.padding = unit(1,"lines"))
+```
+## On a map
+```{r}
+world_map <- map_data("world") # which map to use, from ggplot's collection
+# Since the world map uses different country names, add a column and change some
+happiness.df$map.region <- happiness.df$country
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "United States", "USA", map.region))
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "United Kingdom", "UK", map.region))
+# Hong Kong is a sub-region of China, so for now, ignore sub and put in China
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Hong Kong", "China", map.region))
+# Trinidad and Tobago mapped as two separate regions. Stick both in Trini for now, will need to go with sub-regions later
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Trinidad and Tobago", "Trinidad", map.region))
+# Same issue with North Cyprus
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "North Cyprus", "Cyprus", map.region))
+# Same issue with Somaliland Region
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Somaliland region", "Somalia", map.region))
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Palestinian Territories", "Palestine", map.region))
+# Same issue with North Cyprus
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Congo (Brazzaville)", "Democratic Republic of the Congo", map.region))
+happiness.df <- transform(happiness.df, map.region = ifelse(map.region == "Congo (Kinshasa)", "Democratic Republic of the Congo", map.region))
+ggplot(happiness.df) + 
+  # Plot empty map because some regions have no happiness data, especially those that are 
+  # territories of other countries.
+  geom_map(data=world_map, map = world_map, 
+                           aes(map_id=region), fill="white", color="black") +
+  #plot the actual life ladder
+  geom_map(map = world_map, aes(map_id = map.region, fill = Life.Ladder), colour = "black") +
+  labs(x="", y="", title="Life Ladder position by country") +
+  theme(axis.ticks=element_blank(), axis.text=element_blank()) +
+  expand_limits(x = world_map$long, y = world_map$lat) # no plot appears without this
+```
+
+# Variation by year
+People's happiness will change over time. This graphic shows that even on a country level, it changes quite significantly over a period of five years. I'm hoping that exploring how other factors also vary will shed more light on the possible causes. This seems more likely than comparisons between countries except where they are similar.
+It seems particularly odd that a country with "And the pursuit of happiness" in its consitution does not actually track happiness data as such, but I suppose it's only the pursuit that it cares about.
+
+```{r}
+named_country_2016.df <- filter(happiness.df,PrintCountry != "" & year == 2016)
+named_country_2011.df <- filter(happiness.df,PrintCountry != "" & year == 2011)
+named_country_2016.df$laddergain <- 
+  named_country_2016.df$Life.Ladder - named_country_2011.df$Life.Ladder
+ggplot(named_country_2016.df, aes(x = reorder(country, laddergain), y = laddergain)) +
+  theme(axis.title.y=element_blank()) +
+  ylab("Gain (loss) in Happiness from 2011 to 2015") +
+  geom_bar(stat = "identity") + coord_flip()
+```
+If we look at how changes in happiness correlate with GDP, we see
+```{r}
+# Filter out the 2016 rows into one data frame, the 2011 into another and then merge so we can compare the two years
+data_2016.df <- filter(happiness.df, year == 2016)
+data_2011.df <- filter(happiness.df, year == 2011)
+compare_2016_2011.df <- merge(data_2016.df, data_2011.df, by = "country")
+compare_2016_2011.df$GDPgain <- 
+  compare_2016_2011.df$Log.GDP.per.capita.x - compare_2016_2011.df$Log.GDP.per.capita.y
+compare_2016_2011.df$laddergain <- 
+  compare_2016_2011.df$Life.Ladder.x - compare_2016_2011.df$Life.Ladder.y
+# discard the rows where we can't compare GDP, happiness gains. 
+compare_2016_2011.df <- filter(compare_2016_2011.df, !is.na(GDPgain) & !is.na(laddergain))
+dR2 <- summary(lm(GDPgain ~ laddergain, data = compare_2016_2011.df))$r.squared #get the actual r2 deviation
+ggplot(compare_2016_2011.df,aes(x=laddergain,y=GDPgain)) +
+  labs(title=paste0("More money doesn't buy much more happiness", " R² = ", as.integer(dR2*100), "%")) +
+  scale_x_continuous(name="Log GDP change" ) + #,breaks=seq(0,12,1)) + # various labels
+  scale_y_continuous(name="Change in 'Best to worst possible life' 1-10") +
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE) + # Add linear regression line
+  # Use "text_repel" to add names of selected countries but if they overlap, offset them a bit until they don't
+  geom_text_repel(aes(label=PrintCountry.x), min.segment.length = unit(0, "lines"), 
+                  point.padding = unit(1,"lines"))
+```
+
+# Variation within countries
+Since happiness of residents should be much more important to governments than total money flows, you would think that they would track how track it by sub-populations, especially for Indigenous people and other minorities.
+**To do** see what proxies I can find. A quick web search shows several NGOs with some data in this area.
+
+# Data sources
+
+Link to source | Description
+---------------|-------------
+[World Bank](http://datacatalog.worldbank.org/) | GDP by country by year, US$, csv data 
+[World Happiness Report (WHR)](http://worldhappiness.report/) | Detailed report and data in XLSX format
+
+# Notes on tools
+**Warning: Nerdish**
+
+## Why R?
+I’m using R because it is an excellent Open Source tool, with many useful packages for statistical analysis and graphical display of the results. I had started with a bias towards Python as a more general purpose language that I could use for other things and it would be easier to learn as it is more like the several other programming languages that I know. However, Python has two drawbacks:   
+1. it changed between versions 2 and 3, substantially enough that packages that work under version 2 have to be re-written to work under version 3. Several of the ones I wanted had not been ported.  
+2. several packages failed to load, wanted recompiling and other nuisances. I wanted to do work with them, not spend time making them work. R has so far been super-friendly, nothing has failed, or at least not so much that doing a re-install of R hasn't fixed it, and that only once.  
+
+## Why R Notebooks?
+This new feature lets me produce this document right in RStudio, with the code embedded right in the document. The formatting is done with R Markdown
+I had previously been using LyX, an easy-to-use editor for LaTeX. This is good too, it also lets me embed R code right in the document, powered by the same <span style="font-family: monospace">knitr</span> facility that lets me embed the R in this document.  
+On the R NOtebook side, no more writing code in RStudio, then pasting into LyX, then compiling. Also, there is a really handy "publish" site, which is probably where you're reading this. One click and it's published
+On the downside, I don't much like markdown languages, they're not flexible enough. Even writing this <span style="font-family: monospace">fixed-space font example</span> requires dropping into HTML. And as far as I can tell, with this first release, R Notebooks only format to HTML, even though the underlying markdown will also generate LaTeX or PDF. 
+
+**Conclusion:** I think I'll stick to R Notebooks while I'm mostly coding, then switch to LyX to get better formatting documents.
+XX
