@@ -1,0 +1,216 @@
+country_name,Alpha.3.code,English.short.name,French.short.name,Alpha.2.code,Numeric,ggplot_region_name
+Afghanistan,AFG,Afghanistan,Afghanistan (l'),AF,4,Afghanistan
+Albania,ALB,Albania,Albanie (l'),AL,8,Albania
+Algeria,DZA,Algeria,Algérie (l'),DZ,12,Algeria
+American Samoa,ASM,American Samoa,Samoa américaines (les),AS,16,American Samoa
+Angola,AGO,Angola,Angola (l'),AO,24,Angola
+Antigua and Barbuda,ATG,Antigua and Barbuda,Antigua-et-Barbuda,AG,28,Antigua and Barbuda
+Argentina,ARG,Argentina,Argentine (l'),AR,32,Argentina
+Armenia,ARM,Armenia,Arménie (l'),AM,51,Armenia
+Aruba,ABW,Aruba,Aruba,AW,533,Aruba
+Australia,AUS,Australia,Australie (l'),AU,36,Australia
+Austria,AUT,Austria,Autriche (l'),AT,40,Austria
+Azerbaijan,AZE,Azerbaijan,Azerbaïdjan (l'),AZ,31,Azerbaijan
+"Bahamas, The",BHS,Bahamas (the),Bahamas (les),BS,44,"Bahamas, The"
+Bahrain,BHR,Bahrain,Bahreïn,BH,48,Bahrain
+Bangladesh,BGD,Bangladesh,Bangladesh (le),BD,50,Bangladesh
+Barbados,BRB,Barbados,Barbade (la),BB,52,Barbados
+Belarus,BLR,Belarus,Bélarus (le),BY,112,Belarus
+Belgium,BEL,Belgium,Belgique (la),BE,56,Belgium
+Belize,BLZ,Belize,Belize (le),BZ,84,Belize
+Benin,BEN,Benin,Bénin (le),BJ,204,Benin
+Bermuda,BMU,Bermuda,Bermudes (les),BM,60,Bermuda
+Bhutan,BTN,Bhutan,Bhoutan (le),BT,64,Bhutan
+Bolivia,BOL,Bolivia (Plurinational State of),Bolivie (État plurinational de),BO,68,Bolivia
+Bosnia and Herzegovina,BIH,Bosnia and Herzegovina,Bosnie-Herzégovine (la),BA,70,Bosnia and Herzegovina
+Botswana,BWA,Botswana,Botswana (le),BW,72,Botswana
+Brazil,BRA,Brazil,Brésil (le),BR,76,Brazil
+British Virgin Islands,VGB,Virgin Islands (British),Vierges britanniques (les Îles),VG,92,British Virgin Islands
+Brunei Darussalam,BRN,Brunei Darussalam,Brunéi Darussalam (le),BN,96,Brunei Darussalam
+Bulgaria,BGR,Bulgaria,Bulgarie (la),BG,100,Bulgaria
+Burkina Faso,BFA,Burkina Faso,Burkina Faso (le),BF,854,Burkina Faso
+Burundi,BDI,Burundi,Burundi (le),BI,108,Burundi
+Cabo Verde,CPV,Cabo Verde,Cabo Verde,CV,132,Cabo Verde
+Cambodia,KHM,Cambodia,Cambodge (le),KH,116,Cambodia
+Cameroon,CMR,Cameroon,Cameroun (le),CM,120,Cameroon
+Canada,CAN,Canada,Canada (le),CA,124,Canada
+Cayman Islands,CYM,Cayman Islands (the),Caïmans (les Îles),KY,136,Cayman Islands
+Central African Republic,CAF,Central African Republic (the),République centrafricaine (la),CF,140,Central African Republic
+Chad,TCD,Chad,Tchad (le),TD,148,Chad
+Chile,CHL,Chile,Chili (le),CL,152,Chile
+China,CHN,China,Chine (la),CN,156,China
+Colombia,COL,Colombia,Colombie (la),CO,170,Colombia
+Comoros,COM,Comoros (the),Comores (les),KM,174,Comoros
+Congo (Brazzaville),COG,Congo (the),Congo (le),CG,178,Democratic Republic of the Congo
+Congo (Kinshasa),COD,Congo (Kinshasa),Congo (Kinshasa),CD,NA,Democratic Republic of the Congo
+Costa Rica,CRI,Costa Rica,Costa Rica (le),CR,188,Costa Rica
+Ivory Coast,CIV,Côte d'Ivoire,Côte d'Ivoire (la),CI,384,Ivory Coast
+Croatia,HRV,Croatia,Croatie (la),HR,191,Croatia
+Cuba,CUB,Cuba,Cuba,CU,192,Cuba
+Curacao,CUW,Curaçao,Curaçao,CW,531,Curacao
+North Cyprus,CYP,Cyprus,Chypre,CY,196,Cyprus
+Czech Republic,CZE,Czechia,Tchéquie (la),CZ,203,Czech Republic
+Denmark,DNK,Denmark,Danemark (le),DK,208,Denmark
+Djibouti,DJI,Djibouti,Djibouti,DJ,262,Djibouti
+Dominica,DMA,Dominica,Dominique (la),DM,212,Dominica
+Dominican Republic,DOM,Dominican Republic (the),dominicaine (la République),DO,214,Dominican Republic
+Ecuador,ECU,Ecuador,Équateur (l'),EC,218,Ecuador
+Egypt,EGY,Egypt,Égypte (l'),EG,818,Egypt
+El Salvador,SLV,El Salvador,El Salvador,SV,222,El Salvador
+Equatorial Guinea,GNQ,Equatorial Guinea,Guinée équatoriale (la),GQ,226,Equatorial Guinea
+Eritrea,ERI,Eritrea,Érythrée (l'),ER,232,Eritrea
+Estonia,EST,Estonia,Estonie (l'),EE,233,Estonia
+Ethiopia,ETH,Ethiopia,Éthiopie (l'),ET,231,Ethiopia
+Faroe Islands,FRO,Faroe Islands (the),Féroé (les Îles),FO,234,Faroe Islands
+Fiji,FJI,Fiji,Fidji (les),FJ,242,Fiji
+Finland,FIN,Finland,Finlande (la),FI,246,Finland
+France,FRA,France,France (la),FR,250,France
+French Polynesia,PYF,French Polynesia,Polynésie française (la),PF,258,French Polynesia
+Gabon,GAB,Gabon,Gabon (le),GA,266,Gabon
+"Gambia, The",GMB,Gambia (the),Gambie (la),GM,270,"Gambia, The"
+Georgia,GEO,Georgia,Géorgie (la),GE,268,Georgia
+Germany,DEU,Germany,Allemagne (l'),DE,276,Germany
+Ghana,GHA,Ghana,Ghana (le),GH,288,Ghana
+Gibraltar,GIB,Gibraltar,Gibraltar,GI,292,Gibraltar
+Greece,GRC,Greece,Grèce (la),GR,300,Greece
+Greenland,GRL,Greenland,Groenland (le),GL,304,Greenland
+Grenada,GRD,Grenada,Grenade (la),GD,308,Grenada
+Guam,GUM,Guam,Guam,GU,316,Guam
+Guatemala,GTM,Guatemala,Guatemala (le),GT,320,Guatemala
+Guinea,GIN,Guinea,Guinée (la),GN,324,Guinea
+Guinea-Bissau,GNB,Guinea-Bissau,Guinée-Bissau (la),GW,624,Guinea-Bissau
+Guyana,GUY,Guyana,Guyana (le),GY,328,Guyana
+Haiti,HTI,Haiti,Haïti,HT,332,Haiti
+Honduras,HND,Honduras,Honduras (le),HN,340,Honduras
+Hong Kong,HKG,Hong Kong,Hong Kong,HK,344,China
+Hungary,HUN,Hungary,Hongrie (la),HU,348,Hungary
+Iceland,ISL,Iceland,Islande (l'),IS,352,Iceland
+India,IND,India,Inde (l'),IN,356,India
+Indonesia,IDN,Indonesia,Indonésie (l'),ID,360,Indonesia
+Iran,IRN,Iran (Islamic Republic of),Iran (République Islamique d'),IR,364,Iran
+Iraq,IRQ,Iraq,Iraq (l'),IQ,368,Iraq
+Ireland,IRL,Ireland,Irlande (l'),IE,372,Ireland
+Israel,ISR,Israel,Israël,IL,376,Israel
+Italy,ITA,Italy,Italie (l'),IT,380,Italy
+Ivory Coast,CIV,Côte d'Ivoire,Côte d'Ivoire (la),CI,384,Ivory Coast
+Jamaica,JAM,Jamaica,Jamaïque (la),JM,388,Jamaica
+Japan,JPN,Japan,Japon (le),JP,392,Japan
+Jordan,JOR,Jordan,Jordanie (la),JO,400,Jordan
+Kazakhstan,KAZ,Kazakhstan,Kazakhstan (le),KZ,398,Kazakhstan
+Kenya,KEN,Kenya,Kenya (le),KE,404,Kenya
+Kiribati,KIR,Kiribati,Kiribati,KI,296,Kiribati
+North Korea,PRK,Korea (the Democratic People's Republic of),Corée (la République populaire démocratique de),KP,408,North Korea
+South Korea,KOR,Korea (the Republic of),Corée (la République de),KR,410,South Korea
+Kosovo,XKX,Kosovo,Kosovo,XK,,Kosovo
+Kuwait,KWT,Kuwait,Koweït (le),KW,414,Kuwait
+Kyrgyzstan,KGZ,Kyrgyzstan,Kirghizistan (le),KG,417,Kyrgyzstan
+Laos,LAO,Lao People's Democratic Republic (the),"Lao, République démocratique populaire",LA,418,Laos
+Latvia,LVA,Latvia,Lettonie (la),LV,428,Latvia
+Lebanon,LBN,Lebanon,Liban (le),LB,422,Lebanon
+Lesotho,LSO,Lesotho,Lesotho (le),LS,426,Lesotho
+Liberia,LBR,Liberia,Libéria (le),LR,430,Liberia
+Libya,LBY,Libya,Libye (la),LY,434,Libya
+Liechtenstein,LIE,Liechtenstein,Liechtenstein (le),LI,438,Liechtenstein
+Lithuania,LTU,Lithuania,Lituanie (la),LT,440,Lithuania
+Luxembourg,LUX,Luxembourg,Luxembourg (le),LU,442,Luxembourg
+"Macao SAR, China",MAC,Macao,Macao,MO,446,"Macao SAR, China"
+Macedonia,MKD,Macedonia (the former Yugoslav Republic of),Macédoine (l'ex?République yougoslave de),MK,807,Macedonia
+Madagascar,MDG,Madagascar,Madagascar,MG,450,Madagascar
+Malawi,MWI,Malawi,Malawi (le),MW,454,Malawi
+Malaysia,MYS,Malaysia,Malaisie (la),MY,458,Malaysia
+Maldives,MDV,Maldives,Maldives (les),MV,462,Maldives
+Mali,MLI,Mali,Mali (le),ML,466,Mali
+Malta,MLT,Malta,Malte,MT,470,Malta
+Marshall Islands,MHL,Marshall Islands (the),Marshall (Îles),MH,584,Marshall Islands
+Mauritania,MRT,Mauritania,Mauritanie (la),MR,478,Mauritania
+Mauritius,MUS,Mauritius,Maurice,MU,480,Mauritius
+Mexico,MEX,Mexico,Mexique (le),MX,484,Mexico
+"Micronesia, Fed. Sts.",FSM,Micronesia (Federated States of),Micronésie (États fédérés de),FM,583,"Micronesia, Fed. Sts."
+Moldova,MDA,Moldova (the Republic of),"Moldova, République de",MD,498,Moldova
+Monaco,MCO,Monaco,Monaco,MC,492,Monaco
+Mongolia,MNG,Mongolia,Mongolie (la),MN,496,Mongolia
+Montenegro,MNE,Montenegro,Monténégro (le),ME,499,Montenegro
+Morocco,MAR,Morocco,Maroc (le),MA,504,Morocco
+Mozambique,MOZ,Mozambique,Mozambique (le),MZ,508,Mozambique
+Myanmar,MMR,Myanmar,Myanmar (le),MM,104,Myanmar
+Namibia,NAM,Namibia,Namibie (la),NA,516,Namibia
+Nauru,NRU,Nauru,Nauru,NR,520,Nauru
+Nepal,NPL,Nepal,Népal (le),NP,524,Nepal
+Netherlands,NLD,Netherlands (the),Pays-Bas (les),NL,528,Netherlands
+New Caledonia,NCL,New Caledonia,Nouvelle-Calédonie (la),NC,540,New Caledonia
+New Zealand,NZL,New Zealand,Nouvelle-Zélande (la),NZ,554,New Zealand
+Nicaragua,NIC,Nicaragua,Nicaragua (le),NI,558,Nicaragua
+Niger,NER,Niger (the),Niger (le),NE,562,Niger
+Nigeria,NGA,Nigeria,Nigéria (le),NG,566,Nigeria
+Northern Mariana Islands,MNP,Northern Mariana Islands (the),Mariannes du Nord (les Îles),MP,580,Northern Mariana Islands
+Norway,NOR,Norway,Norvège (la),NO,578,Norway
+Oman,OMN,Oman,Oman,OM,512,Oman
+Pakistan,PAK,Pakistan,Pakistan (le),PK,586,Pakistan
+Palau,PLW,Palau,Palaos (les),PW,585,Palau
+Palestinian Territories,PSE,Palestinian Territories,Territoires Palestinien,PS,NA,Palestine
+Panama,PAN,Panama,Panama (le),PA,591,Panama
+Papua New Guinea,PNG,Papua New Guinea,Papouasie-Nouvelle-Guinée (la),PG,598,Papua New Guinea
+Paraguay,PRY,Paraguay,Paraguay (le),PY,600,Paraguay
+Peru,PER,Peru,Pérou (le),PE,604,Peru
+Philippines,PHL,Philippines (the),Philippines (les),PH,608,Philippines
+Poland,POL,Poland,Pologne (la),PL,616,Poland
+Portugal,PRT,Portugal,Portugal (le),PT,620,Portugal
+Puerto Rico,PRI,Puerto Rico,Porto Rico,PR,630,Puerto Rico
+Qatar,QAT,Qatar,Qatar (le),QA,634,Qatar
+Romania,ROU,Romania,Romania,RO,NA,Romania
+Russia,RUS,Russian Federation (the),Russie (la Fédération de),RU,643,Russia
+Rwanda,RWA,Rwanda,Rwanda (le),RW,646,Rwanda
+Samoa,WSM,Samoa,Samoa (le),WS,882,Samoa
+San Marino,SMR,San Marino,Saint-Marin,SM,674,San Marino
+Sao Tome and Principe,STP,Sao Tome and Principe,Sao Tomé-et-Principe,ST,678,Sao Tome and Principe
+Saudi Arabia,SAU,Saudi Arabia,Arabie saoudite (l'),SA,682,Saudi Arabia
+Senegal,SEN,Senegal,Sénégal (le),SN,686,Senegal
+Serbia,SRB,Serbia,Serbie (la),RS,688,Serbia
+Seychelles,SYC,Seychelles,Seychelles (les),SC,690,Seychelles
+Sierra Leone,SLE,Sierra Leone,Sierra Leone (la),SL,694,Sierra Leone
+Singapore,SGP,Singapore,Singapour,SG,702,Singapore
+Sint Maarten (Dutch part),SXM,Sint Maarten (Dutch part),Saint-Martin (partie néerlandaise),SX,534,Sint Maarten (Dutch part)
+Slovakia,SVK,Slovakia,Slovaquie (la),SK,703,Slovakia
+Slovenia,SVN,Slovenia,Slovénie (la),SI,705,Slovenia
+Solomon Islands,SLB,Solomon Islands,Salomon (Îles),SB,90,Solomon Islands
+Somalia,SOM,Somalia,Somalie (la),SO,706,Somalia
+South Africa,ZAF,South Africa,Afrique du Sud (l'),ZA,710,South Africa
+South Sudan,SSD,South Sudan,Soudan du Sud (le),SS,728,South Sudan
+Spain,ESP,Spain,Espagne (l'),ES,724,Spain
+Sri Lanka,LKA,Sri Lanka,Sri Lanka,LK,144,Sri Lanka
+St. Kitts and Nevis,KNA,Saint Kitts and Nevis,Saint-Kitts-et-Nevis,KN,659,St. Kitts and Nevis
+St. Lucia,LCA,Saint Lucia,Sainte-Lucie,LC,662,St. Lucia
+St. Martin (French part),MAF,Saint Martin (French part),Saint-Martin (partie française),MF,663,St. Martin (French part)
+St. Vincent and the Grenadines,VCT,Saint Vincent and the Grenadines,Saint-Vincent-et-les Grenadines,VC,670,St. Vincent and the Grenadines
+Sudan,SDN,Sudan (the),Soudan (le),SD,729,Sudan
+Suriname,SUR,Suriname,Suriname (le),SR,740,Suriname
+Swaziland,SWZ,Swaziland,Swaziland (le),SZ,748,Swaziland
+Sweden,SWE,Sweden,Suède (la),SE,752,Sweden
+Switzerland,CHE,Switzerland,Suisse (la),CH,756,Switzerland
+Syria,SYR,Syrian Arab Republic,République arabe syrienne (la),SY,760,Syria
+Taiwan,TWN,Taiwan,Teiwen,TW,NA,Taiwan
+Tajikistan,TJK,Tajikistan,Tadjikistan (le),TJ,762,Tajikistan
+Tanzania,TZA,"Tanzania, United Republic of","Tanzanie, République-Unie de",TZ,834,Tanzania
+Thailand,THA,Thailand,Thaïlande (la),TH,764,Thailand
+Togo,TGO,Togo,Togo (le),TG,768,Togo
+Tonga,TON,Tonga,Tonga (les),TO,776,Tonga
+Trinidad and Tobago,TTO,Trinidad and Tobago,Trinité-et-Tobago (la),TT,780,Trinidad
+Tunisia,TUN,Tunisia,Tunisie (la),TN,788,Tunisia
+Turkey,TUR,Turkey,Turquie (la),TR,792,Turkey
+Turkmenistan,TKM,Turkmenistan,Turkménistan (le),TM,795,Turkmenistan
+Turks and Caicos Islands,TCA,Turks and Caicos Islands (the),Turks-et-Caïcos (les Îles),TC,796,Turks and Caicos Islands
+Tuvalu,TUV,Tuvalu,Tuvalu (les),TV,798,Tuvalu
+Uganda,UGA,Uganda,Ouganda (l'),UG,800,Uganda
+Ukraine,UKR,Ukraine,Ukraine (l'),UA,804,Ukraine
+United Arab Emirates,ARE,United Arab Emirates (the),Émirats arabes unis (les),AE,784,United Arab Emirates
+United Kingdom,GBR,United Kingdom of Great Britain and Northern Ireland (the),Royaume-Uni de Grande-Bretagne et d'Irlande du Nord (le),GB,826,UK
+United States,USA,United States of America (the),États-Unis d'Amérique (les),US,840,USA
+Uruguay,URY,Uruguay,Uruguay (l'),UY,858,Uruguay
+Uzbekistan,UZB,Uzbekistan,Ouzbékistan (l'),UZ,860,Uzbekistan
+Vanuatu,VUT,Vanuatu,Vanuatu (le),VU,548,Vanuatu
+Venezuela,VEN,Venezuela (Bolivarian Republic of),Venezuela (République bolivarienne du),VE,862,Venezuela
+Vietnam,VNM,Viet Nam,Viet Nam (le),VN,704,Vietnam
+Virgin Islands (U.S.),VIR,Virgin Islands (U.S.),Vierges des États-Unis (les Îles),VI,850,Virgin Islands (U.S.)
+Yemen,YEM,Yemen,Yémen (le),YE,887,Yemen
+Zambia,ZMB,Zambia,Zambie (la),ZM,894,Zambia
+Zimbabwe,ZWE,Zimbabwe,Zimbabwe (le),ZW,NA,Zimbabwe
